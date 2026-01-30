@@ -1,11 +1,87 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Quiz</title>
+    <title>Youssef Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+
+    <!-- Contenedor para efectos de emojis -->
+    <div id="emoji-container"></div>
+
+    <div id="app">
+        <!-- PANTALLA DE INICIO -->
+        <section id="home-screen" class="card">
+            <h1>🚨Youssef¡Quiz</h1>
+            
+            <div class="instructions-box">
+                <h3>📋 Instrucciones del Examen</h3>
+                <ul>
+                    <li>El test consta de <strong>10 preguntas</strong></li>
+                    <li>Cada respuesta correcta suma <strong>1 punto</strong></li>
+                    <li>Menos de 5/10: <span class="fail">SUSPENDIDO</span></li>
+                    <li>5 o más de 10: <span class="pass">APROBADO</span></li>
+                    <li>Al finalizar verás tu puntuación total</li>
+                </ul>
+            </div>
+            
+            <input type="text" id="user-name" placeholder="✏️ Escribe tu nombre...">
+            <select id="topic-select">
+                <option value="">📚 Selecciona un tema</option>
+            </select>
+            <button id="start-btn">🚀 Empezar Examen</button>
+        </section>
+
+        <!-- PANTALLA DE PREGUNTAS -->
+        <section id="quiz-screen" class="card hidden">
+            <div class="header-quiz">
+                <span id="current-user"></span>
+                <div id="progress-bar">Pregunta 1 de X</div>
+            </div>
+            <h2 id="question-text">Pregunta aquí</h2>
+            <div id="options-container"></div>
+            <button id="next-btn" class="hidden">Siguiente →</button>
+        </section>
+
+        <!-- PANTALLA DE RESULTADOS -->
+        <section id="result-screen" class="card hidden">
+            <h2>Resultados para <span id="final-name"></span></h2>
+            
+            <div class="score-display">
+                <div class="score-number" id="score-number">0</div>
+                <div class="score-total">de 10 puntos</div>
+                <div class="score-percentage" id="score-percentage">0% de aciertos</div>
+                <span class="status-badge" id="status-badge">APROBADO</span>
+            </div>
+            
+            <div class="result-message" id="result-message">
+                Mensaje de resultado
+            </div>
+            
+            <div class="stats-container">
+                <div class="stat-box correct-stat">
+                    <div class="stat-number" id="correct-count">0</div>
+                    <div class="stat-label">✅ Correctas</div>
+                </div>
+                <div class="stat-box incorrect-stat">
+                    <div class="stat-number" id="incorrect-count">0</div>
+                    <div class="stat-label">❌ Incorrectas</div>
+                </div>
+            </div>
+            
+            <!-- Botón toggle para ver resumen -->
+            <button id="toggle-review-btn" class="toggle-review-btn">
+                📝 Ver Resumen de Respuestas <span class="arrow">▼</span>
+            </button>
+            
+            <div id="review-container"></div>
+            
+            <button id="restart-btn">🔄 Reiniciar Test</button>
+        </section>
+    </div>
+
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>

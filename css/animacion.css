@@ -1,0 +1,89 @@
+/* Tarjetas */
+.card {
+    background: var(--surface);
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--surface-border);
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================
+   EFECTO DE EMOJIS FLOTANTES
+   ======================================== */
+
+#emoji-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+
+.floating-emoji {
+    position: absolute;
+    font-size: 2.5rem;
+    animation: floatUp 3s ease-out forwards;
+    opacity: 0;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(100vh) scale(0.5) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) scale(1.2) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Efecto de lágrimas cayendo */
+.falling-emoji {
+    position: absolute;
+    font-size: 2rem;
+    animation: fallDown 4s ease-in forwards;
+    opacity: 0;
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(-50px) scale(0.8);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) scale(1);
+        opacity: 0.5;
+    }
+}

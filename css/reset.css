@@ -1,0 +1,67 @@
+/* Variables de diseño */
+:root {
+    --primary: #ffc107;
+    --primary-dark: #ffb300;
+    --primary-light: #ffca28;
+    --secondary: #ffd54f;
+    --correct: #4caf50;
+    --incorrect: #f44336;
+    --warning: #ff9800;
+    --background: #121212;
+    --surface: #1e1e1e;
+    --surface-light: #2d2d2d;
+    --surface-border: #3d3d3d;
+    --text: #ffffff;
+    --text-secondary: #b0b0b0;
+    --gradient: linear-gradient(135deg, #ffc107 0%, #ffb300 50%, #ff9800 100%);
+    --shadow: 0 10px 40px rgba(255, 193, 7, 0.15);
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: var(--background);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: var(--text);
+    background-image:
+        radial-gradient(ellipse at top, rgba(255, 193, 7, 0.08), transparent 60%),
+        radial-gradient(ellipse at bottom right, rgba(255, 152, 0, 0.06), transparent 50%);
+}
+
+/* Títulos */
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h2 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    line-height: 1.4;
+}
+
+h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 1rem;
+}
